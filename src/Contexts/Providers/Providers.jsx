@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { AuthorizationProvider } from "./Authorization";
+import { AuthorizationProvider } from "../Authorization";
 
 export const Providers = ({ children }) => {
 	return (

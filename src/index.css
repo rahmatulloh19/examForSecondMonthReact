@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Red+Hat+Display&family=Roboto&display=swap');
-
-
-.font-red-hat {
-	font-family: 'Red Hat Display', sans-serif;
-}
-
-.font-roboto {
-	font-family: 'Roboto', sans-serif;
-}
-
-.font-arial {
-	font-family: "Arial";
-}
-
 /* Mobile first */
 * {
 	box-sizing: border-box;

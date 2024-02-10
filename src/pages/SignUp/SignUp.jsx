@@ -3,10 +3,10 @@ import * as Yup from "yup";
 import Sign_up from "../../assets/images/SignUp.png";
 import instance from "../../axios";
 import { Link, useNavigate } from "react-router-dom";
-import { FieldComponent, FormikComponent, StatusForm } from "../../components";
-import { useContext } from "react";
-import { Authorization } from "../../Contexts/Authorization/Authorization";
+import { FieldComponent, FormikComponent } from "../../components";
+import { useContext, useEffect } from "react";
 import { t } from "i18next";
+import { Authorization } from "../../Contexts";
 
 export const SignUp = () => {
 	const initialValues = {
@@ -55,7 +55,7 @@ export const SignUp = () => {
 
 	return (
 		<div className="w-screen h-screen flex">
-			<div className="flex-1 flex flex-col items-center justify-center bg-[#C9AC8CED]">
+			<div className="flex-1 flex flex-col items-center justify-center bg-[#C9AC8CED] dark:bg-[#D1B89DED]">
 				<img src={Sign_up} width={500} height={500} alt={t("sign_up.imgAlt")} />
 			</div>
 			<div className="flex-1 flex flex-col items-center justify-center">
