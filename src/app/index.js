@@ -1,4 +1,4 @@
-import { PrivateApp } from "./Private";
-import { PublicApp } from "./Public";
+import { Private } from "./Private";
+import { Public } from "./Public";
 
-export { PrivateApp, PublicApp };
+export { Private, Public };
