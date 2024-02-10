@@ -1,13 +1,5 @@
-const lang = {
-	en: {
-		h1: "Hello world",
-	},
-	ru: {
-		h1: "Hello",
-	},
-	uz: {
-		h1: "world",
-	},
-};
+import { uz } from "./uz";
+import { ru } from "./ru";
+import { en } from "./en";
 
-export default lang;
+export { uz, ru, en };

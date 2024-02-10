@@ -1,17 +1,17 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
-import lang from "./lang";
+import { en, ru, uz } from "./lang";
 
 i18next.use(initReactI18next).init({
 	resources: {
 		en: {
-			translation: lang.en,
+			translation: en,
 		},
 		ru: {
-			translation: lang.ru,
+			translation: ru,
 		},
 		uz: {
-			translation: lang.uz,
+			translation: uz,
 		},
 	},
 	debug: true,

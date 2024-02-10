@@ -3,11 +3,12 @@ import instance from "./axios";
 import "./i18n";
 import { useTranslation } from "react-i18next";
 import { Private, Public } from "./app/";
+import { useContext } from "react";
 
 function App() {
-	const token = false;
+	const { auth } = useContext(Authorization);
 
-	if (token) {
+	if (auth) {
 		return <Private />;
 	}
 
