@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Font families */
 @font-face {
 	font-family: "";
@@ -41,4 +45,9 @@ img {
 /* Sticky footer */
 .site-main {
 	flex-grow: 1;
+}
+
+.btn {
+	height: auto;
+	min-height: auto;
 }
