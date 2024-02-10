@@ -2,36 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font families */
-@font-face {
-	font-family: "";
-	font-weight: 00;
-	font-display: swap;
-	src: url("../fonts/") format("woff2"), url("../fonts/") format("woff");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Red+Hat+Display&family=Roboto&display=swap');
+
+
+.font-red-hat {
+	font-family: 'Red Hat Display', sans-serif;
 }
+
+.font-roboto {
+	font-family: 'Roboto', sans-serif;
+}
+
+.font-arial {
+	font-family: "Arial";
+}
+
+
+
+
 /* Mobile first */
 * {
 	box-sizing: border-box;
 }
+
 html {
 	height: 100%;
 }
+
 body {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 	margin: 0;
-	font-family: "", "Arial", sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
+
 #root {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 }
+
 img {
 	display: block;
 	height: auto;
 }
+
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -42,6 +58,7 @@ img {
 	overflow: hidden;
 	clip: rect(0 0 0 0);
 }
+
 /* Sticky footer */
 .site-main {
 	flex-grow: 1;
@@ -50,4 +67,17 @@ img {
 .btn {
 	height: auto;
 	min-height: auto;
+}
+
+.valid-feedback {
+	@apply text-success;
+}
+
+.invalid-feedback {
+	@apply text-error;
+}
+
+.rounded-full:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
 }

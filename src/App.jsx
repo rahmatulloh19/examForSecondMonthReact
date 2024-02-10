@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Private, Public } from "./app/";
 
 function App() {
-	const token = true;
+	const token = false;
 
 	if (token) {
 		return <Private />;
