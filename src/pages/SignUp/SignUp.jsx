@@ -54,16 +54,16 @@ export const SignUp = () => {
 	});
 
 	return (
-		<div className="w-screen h-screen flex">
+		<div className="w-screen h-screen flex dark:bg-black">
 			<div className="flex-1 flex flex-col items-center justify-center bg-[#C9AC8CED] dark:bg-[#D1B89DED]">
 				<img src={Sign_up} width={500} height={500} alt={t("sign_up.imgAlt")} />
 			</div>
 			<div className="flex-1 flex flex-col items-center justify-center">
 				<div className="max-w-[330px] w-full">
-					<h1 className="font-arial font-black self-start text-4xl leading-[54px] mb-2.5">
+					<h1 className="font-arial font-black self-start text-4xl leading-[54px] mb-2.5 dark:text-white">
 						{t("sign_up.title")}
 					</h1>
-					<span className="block mb-[21px] text-[13px] leading-6">
+					<span className="block mb-[21px] text-[13px] leading-6 dark:text-white">
 						{t("sign_up.signInText")}
 						<Link className="text-[#549FF9]" to="/">
 							{" "}
@@ -119,7 +119,7 @@ export const SignUp = () => {
 									/>
 
 									<button
-										className="bg-[#152540] py-3.5 text-white font-medium text-lg rounded-full !font-roboto"
+										className="bg-[#152540] py-3.5 text-white font-medium text-lg rounded-full !font-roboto dark:bg-white dark:text-black"
 										disabled={formik.dirty && formik.isValid ? false : true}
 										type="submit">
 										{t("sign_up.submitBtn")}

@@ -5,7 +5,7 @@ export const FieldComponent = ({ isTouched, haveError, name, type, holder, isReq
 	return (
 		<div className="flex flex-col">
 			<Field
-				className={`flex-grow border-[#B4B4BB] border rounded py-3 px-7 outline-none ${
+				className={`flex-grow border-[#B4B4BB] border rounded py-3 px-7 outline-none dark:bg-black dark:text-white ${
 					isTouched ? (isTouched && !haveError ? "border-success" : "border-error") : ""
 				}`}
 				type={type}
