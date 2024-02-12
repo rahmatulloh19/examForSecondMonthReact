@@ -21,7 +21,13 @@ export const SignIn = () => {
 	const onSubmit = (values) => {
 		instance
 			.post("/user/login", values)
-			.then((res) => res.status === 201 && (navigate("/"), setAuth(res.data.token)));
+			.then(
+				(res) =>
+					res.status === 201 &&
+					(navigate("/", { replace: true }),
+					localStorage.setItem("token", res.data.token),
+					setAuth(res.data.token))
+			);
 	};
 
 	const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;

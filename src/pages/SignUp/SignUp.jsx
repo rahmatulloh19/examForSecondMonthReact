@@ -24,7 +24,13 @@ export const SignUp = () => {
 	const onSubmit = (values) => {
 		instance
 			.post("/user/register", values)
-			.then((res) => res.status === 201 && (navigate("/"), setAuth(res.data.token)));
+			.then(
+				(res) =>
+					res.status === 201 &&
+					(navigate("/", { replace: true }),
+					localStorage.setItem("token", res.data.token),
+					setAuth(res.data.token))
+			);
 	};
 
 	const phoneRegExp =

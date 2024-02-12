@@ -28,7 +28,7 @@ function App() {
 	// 	localStorage.removeItem("mode");
 	// }
 
-	if (auth) {
+	if (auth || localStorage.getItem("token")) {
 		return <Private />;
 	}
 
