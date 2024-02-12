@@ -49,5 +49,11 @@ export const ru = {
 		dateBirth: "Дата рождения",
 		dateDead: "Дата смерти",
 		works: "Работы",
+		pages: "Количество страниц:",
+		page: "Страница",
+		published: "Опубликовано:",
+		year: "год",
+		price: "Цена книги:",
+		fullInfo: "Полная информация",
 	},
 };

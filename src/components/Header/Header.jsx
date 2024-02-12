@@ -21,7 +21,7 @@ export const Header = () => {
 	}, []);
 
 	return (
-		<header className="py-[32.5px] dark:bg-[#191919] sticky top-0 z-30">
+		<header className="py-[32.5px] bg-white dark:bg-[#191919] sticky top-0 z-30">
 			<div className="container">
 				<div className="flex items-center justify-between">
 					<Link className="text-[25px] leading-[37.5px] text-[#D1B89D] dark:text-[#C9AC8C]" to="/">

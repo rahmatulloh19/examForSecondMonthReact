@@ -49,5 +49,11 @@ export const en = {
 		dateBirth: "Date of birth",
 		dateDead: "Date of death",
 		works: "Works",
+		pages: "Number of pages:",
+		page: "page",
+		published: "Published:",
+		year: "years",
+		price: "Book price:",
+		fullInfo: "Full information",
 	},
 };

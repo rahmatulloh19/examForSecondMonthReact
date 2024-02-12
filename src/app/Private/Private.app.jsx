@@ -9,7 +9,7 @@ export const Private = () => {
 			<Route index element={<Home />} />
 			<Route path="/books" element={<Books />} />
 			<Route path="/author/:id" element={<SinglePage />} />
-			<Route path="/book/:id" element={<SinglePage />} />
+			<Route path="/book/:id" element={<SinglePage isBook={true} />} />
 			<Route path="user-info">
 				<Route index element={<Profile />} />
 				<Route path="security" element={<Security />} />

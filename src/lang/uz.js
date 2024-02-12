@@ -49,5 +49,11 @@ export const uz = {
 		dateBirth: "Tavallud sanasi",
 		dateDead: "Vafot etgan sana",
 		works: "Asarlari",
+		pages: "Sahifalar soni:",
+		page: "sahifa",
+		published: "Chop etilgan:",
+		year: "yil",
+		price: "Kitob narxi:",
+		fullInfo: "To'liq ma'lumot",
 	},
 };
