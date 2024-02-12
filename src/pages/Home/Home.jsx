@@ -1,4 +1,4 @@
-import { Carousel, Header, Search } from "../../components";
+import { Carousel, Categories, Header, Search } from "../../components";
 
 export const Home = () => {
 	return (
@@ -7,6 +7,7 @@ export const Home = () => {
 			<main className="dark:bg-[#191919] relative">
 				<Carousel />
 				<Search name="author" />
+				<Categories />
 			</main>
 		</>
 	);

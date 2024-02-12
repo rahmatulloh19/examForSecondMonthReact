@@ -107,3 +107,15 @@ img {
 article {
 	box-shadow: 0px 4px 77px 0px #00000040;
 }
+
+a {
+	outline: none;
+}
+
+.categories__input:checked+span {
+	color: #C9AC8C;
+}
+
+.dark .categories__input:checked+span {
+	color: #C9AC8C;
+}

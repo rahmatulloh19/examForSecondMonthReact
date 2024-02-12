@@ -37,4 +37,9 @@ export const uz = {
 		addBook: "Kitob qo'shish",
 		logout: "Chiqish",
 	},
+	search: {
+		title: "Qidiruv",
+		holder: "Adiblar, kitoblar, audiolar, maqolalar...",
+		btn: "Izlash",
+	},
 };

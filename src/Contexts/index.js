@@ -1,3 +1,4 @@
 import { Authorization, AuthorizationProvider } from "./Authorization";
+import { SearchValue, SearchValueProvider } from "./SearchValue";
 
-export { Authorization, AuthorizationProvider };
+export { Authorization, AuthorizationProvider, SearchValue, SearchValueProvider };

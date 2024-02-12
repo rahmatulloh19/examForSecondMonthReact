@@ -40,6 +40,9 @@ export const en = {
 	search: {
 		title: "Search",
 		holder: "Articles, books, audios, articles...",
-		btn: "Tracking",
+		btn: "Quest",
+	},
+	categories: {
+		title: "Main categories",
 	},
 };

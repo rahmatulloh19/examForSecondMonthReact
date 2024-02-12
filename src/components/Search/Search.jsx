@@ -1,14 +1,21 @@
 import { t } from "i18next";
+import instance from "../../axios";
+import { useContext } from "react";
+import { SearchValue } from "../../Contexts";
 
 export const Search = ({ name }) => {
+	const { setSearchValue } = useContext(SearchValue);
+
 	const handleSearch = (evt) => {
 		evt.preventDefault();
 
-		// console.log(evt.target[0].value);
+		instance.get("/book/search", { name: evt.target[0].value }).then((res) => {
+			setSearchValue(res.data);
+		});
 	};
 
 	return (
-		<aside className="absolute w-[1030px] py-[29px] px-[73px] bg-white dark:bg-[#191919] bottom-[100px] z-10 h-[163px] left-2/4 -translate-x-2/4 rounded-2xl">
+		<article className="absolute w-[1030px] py-[29px] px-[73px] bg-white dark:bg-[#191919] top-[268px] z-10 h-[163px] left-2/4 -translate-x-2/4 rounded-2xl">
 			<h2 className="text-center text-[32px] leading-[48px] text-[#D1B89D] dark:text-[#C9AC8C] mb-[9px]">
 				{t("search.title")}
 			</h2>
@@ -42,6 +49,6 @@ export const Search = ({ name }) => {
 					{t("search.btn")}
 				</button>
 			</form>
-		</aside>
+		</article>
 	);
 };

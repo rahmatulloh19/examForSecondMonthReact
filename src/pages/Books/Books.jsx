@@ -1,4 +1,4 @@
-import { Carousel, Header, Search } from "../../components";
+import { Carousel, Categories, Header, Search } from "../../components";
 
 export const Books = () => {
 	return (
@@ -7,6 +7,7 @@ export const Books = () => {
 			<main className="dark:bg-[#191919] relative">
 				<Carousel />
 				<Search name="book" />
+				<Categories isBooks={true} />
 			</main>
 		</>
 	);

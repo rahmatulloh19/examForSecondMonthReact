@@ -12,8 +12,8 @@ export const Header = () => {
 	const { setAuth } = useContext(Authorization);
 
 	const logOutFunction = () => {
-		setAuth("");
 		localStorage.removeItem("token");
+		setAuth("");
 	};
 
 	useEffect(() => {
@@ -65,7 +65,7 @@ export const Header = () => {
 									</div>
 									<ul
 										tabIndex={0}
-										className="dropdown-content z-[1] menu shadow bg-base-100 rounded-box min-w-[140px] max-w-max dark:bg-[#191919] text-black dark:text-[#C9AC8C]">
+										className="dropdown-content z-20 menu shadow bg-base-100 rounded-box min-w-[140px] max-w-max dark:bg-[#191919] text-black dark:text-[#C9AC8C]">
 										<li>
 											<Link
 												className="px-6 py-2 text-black dark:text-[#c9ac8c] font-bold"
