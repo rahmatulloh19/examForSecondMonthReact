@@ -37,4 +37,9 @@ export const en = {
 		addBook: "Add book",
 		logout: "Log out",
 	},
+	search: {
+		title: "Search",
+		holder: "Articles, books, audios, articles...",
+		btn: "Tracking",
+	},
 };

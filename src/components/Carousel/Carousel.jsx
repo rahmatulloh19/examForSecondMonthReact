@@ -14,7 +14,7 @@ export const Carousel = () => {
 	};
 
 	return (
-		<section className="site-carousel h-[346px]">
+		<section className="site-carousel h-[531px] pb-[185px]">
 			<div className="container h-full">
 				<Swiper
 					rewind={true}
