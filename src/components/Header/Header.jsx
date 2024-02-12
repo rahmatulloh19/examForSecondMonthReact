@@ -1,14 +1,19 @@
+import { IoIosArrowDown } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
 import { t } from "i18next";
 import { Link, NavLink } from "react-router-dom";
 import instance from "../../axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Authorization } from "../../Contexts";
 
 export const Header = () => {
 	const [img, setImg] = useState(null);
 
+	const { setAuth } = useContext(Authorization);
+
 	const logOutFunction = () => {
-		console.log("hello");
+		setAuth("");
+		localStorage.removeItem("token");
 	};
 
 	useEffect(() => {
@@ -19,7 +24,7 @@ export const Header = () => {
 		<header className="py-[32.5px] dark:bg-[#191919]">
 			<div className="container">
 				<div className="flex items-center justify-between">
-					<Link className="text-[25px] leading-[37.5px] text-[#D1B89D] dark:text-[#C9AC8C]">
+					<Link className="text-[25px] leading-[37.5px] text-[#D1B89D] dark:text-[#C9AC8C]" to="/">
 						Badiiyat
 					</Link>
 
@@ -27,7 +32,9 @@ export const Header = () => {
 						<ul className="flex items-center text-[#d7d7d7] dark:text-[#5E5E5E] gap-x-[22px] leading-[23px] ">
 							<li>
 								<NavLink
-									className={(isActive) => (isActive ? "dark:text-white text-[#0D0D0D]" : "")}
+									className={({ isActive }) =>
+										(isActive ? "dark:text-white text-[#0D0D0D]" : "") + ""
+									}
 									to="/"
 									end>
 									{t("header.main")}
@@ -35,7 +42,9 @@ export const Header = () => {
 							</li>
 							<li>
 								<NavLink
-									className={`${(isActive) => (isActive ? "dark:text-[#fff]" : "")}`}
+									className={({ isActive }) =>
+										(isActive ? "dark:text-white text-[#0D0D0D] " : "") + ""
+									}
 									to="/books"
 									end>
 									{t("header.books")}
@@ -46,12 +55,13 @@ export const Header = () => {
 									<div
 										tabIndex={0}
 										role="button"
-										className="bg-transparent text-transparent border-none hover:bg-transparent w-[49px] h-[49px]">
+										className="bg-transparent text-transparent border-none w-[49px] h-[49px] flex items-center">
 										{img ? (
 											<img src={img} width={49} height={49} alt="" />
 										) : (
-											<FaRegUserCircle className="dark:text-white w-full h-full" />
+											<FaRegUserCircle className="text-[#0D0D0D] dark:text-white shrink-0 w-full h-full" />
 										)}
+										<IoIosArrowDown className="ms-2 text-[#0D0D0D] dark:text-white w-[15px] shrink-0" />
 									</div>
 									<ul
 										tabIndex={0}

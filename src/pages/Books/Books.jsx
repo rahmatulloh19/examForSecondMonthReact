@@ -1,3 +1,9 @@
+import { Header } from "../../components";
+
 export const Books = () => {
-	return <div>Books</div>;
+	return (
+		<>
+			<Header />
+		</>
+	);
 };

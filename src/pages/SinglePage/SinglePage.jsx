@@ -1,3 +1,9 @@
+import { Header } from "../../components";
+
 export const SinglePage = () => {
-	return <div>SinglePage</div>;
+	return (
+		<>
+			<Header />
+		</>
+	);
 };
