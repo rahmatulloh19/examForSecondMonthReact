@@ -28,4 +28,13 @@ export const en = {
 	submitBtn: "Next step",
 	required: "Required!",
 	good: "Looks good",
+
+	header: {
+		main: "Homepage",
+		books: "Books",
+		profile: "Profile",
+		addAuthor: "Add author",
+		addBook: "Add book",
+		logout: "Log out",
+	},
 };

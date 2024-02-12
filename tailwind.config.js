@@ -2,7 +2,17 @@
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
-		extend: {},
+		extend: {
+			container: {
+				center: true,
+				padding: {
+					default: "20px",
+				},
+				screens: {
+					default: "1280px",
+				},
+			},
+		},
 	},
 	darkMode: "class",
 	plugins: [require("daisyui")],
@@ -11,7 +21,7 @@ export default {
 		themes: false,
 		darkTheme: "light",
 		base: false,
-		styled: true,
+		styled: false,
 		utils: false,
 		prefix: "",
 		logs: false,

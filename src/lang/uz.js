@@ -28,4 +28,13 @@ export const uz = {
 	submitBtn: "Keyingi qadam",
 	required: "Kerakli!",
 	good: "Yaxshi ko'rinadi",
+
+	header: {
+		main: "Bosh sahifa",
+		books: "Kitoblar",
+		Profil: "Profil",
+		addAuthor: "Muallif qo'shish",
+		addBook: "Kitob qo'shish",
+		logout: "Chiqish",
+	},
 };
