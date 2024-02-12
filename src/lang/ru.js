@@ -42,4 +42,12 @@ export const ru = {
 		holder: "Статьи, книги, аудио, статейки...",
 		btn: "Искать",
 	},
+	categories: {
+		title: "Основные категории",
+	},
+	singlePage: {
+		dateBirth: "Дата рождения",
+		dateDead: "Дата смерти",
+		works: "Работы",
+	},
 };

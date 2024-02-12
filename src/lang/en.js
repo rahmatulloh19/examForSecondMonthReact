@@ -45,4 +45,9 @@ export const en = {
 	categories: {
 		title: "Main categories",
 	},
+	singlePage: {
+		dateBirth: "Date of birth",
+		dateDead: "Date of death",
+		works: "Works",
+	},
 };

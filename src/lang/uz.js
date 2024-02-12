@@ -42,4 +42,12 @@ export const uz = {
 		holder: "Adiblar, kitoblar, audiolar, maqolalar...",
 		btn: "Izlash",
 	},
+	categories: {
+		title: "Asosiy kategoriyalar",
+	},
+	singlePage: {
+		dateBirth: "Tavallud sanasi",
+		dateDead: "Vafot etgan sana",
+		works: "Asarlari",
+	},
 };

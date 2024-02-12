@@ -6,6 +6,7 @@ import { Header } from "./Header";
 import { Carousel } from "./Carousel";
 import { Search } from "./Search";
 import { Categories } from "./Categories";
+import { Info } from "./Info";
 
 export {
 	NotFound,
@@ -16,4 +17,5 @@ export {
 	Carousel,
 	Search,
 	Categories,
+	Info,
 };
