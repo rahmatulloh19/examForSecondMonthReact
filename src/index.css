@@ -119,3 +119,15 @@ a {
 .dark .categories__input:checked+span {
 	color: #C9AC8C;
 }
+
+.author__item {
+	background-image: url("./assets/images/decor.svg"), url("./assets/images/decor.svg");
+	background-repeat: no-repeat;
+	background-size: contain, 142px 142px;
+	background-position: -52px 100px, 215px -33px;
+}
+
+.dark .author__item {
+	background-image: url("./assets/images/darkdecor.svg"),
+		url("./assets/images/darkdecor.svg");
+}
