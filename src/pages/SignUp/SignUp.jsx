@@ -1,10 +1,10 @@
-import { Field, Form, Formik } from "formik";
+import { Form } from "formik";
 import * as Yup from "yup";
-import Sign_up from "../../assets/images/SignUp.png";
+import sign_up from "../../assets/images/signUp.svg";
 import instance from "../../axios";
 import { Link, useNavigate } from "react-router-dom";
 import { FieldComponent, FormikComponent } from "../../components";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { t } from "i18next";
 import { Authorization } from "../../Contexts";
 
@@ -24,7 +24,7 @@ export const SignUp = () => {
 	const onSubmit = (values) => {
 		instance
 			.post("/user/register", values)
-			.then((res) => res.status === 201 && (navigate("/"), setAuth("hi")));
+			.then((res) => res.status === 201 && (navigate("/"), setAuth(res.data.token)));
 	};
 
 	const phoneRegExp =
@@ -46,17 +46,17 @@ export const SignUp = () => {
 			.min(9, t("sign_up.phoneLength"))
 			.max(9, t("sign_up.phoneLength"))
 			.required(t("required")),
-		email: Yup.string().matches(emailRegExp, t("sign_up.emailInValid")).required(t("required")),
+		email: Yup.string().matches(emailRegExp, t("emailInValid")).required(t("required")),
 		password: Yup.string()
-			.min(8, t("sign_up.passwordLonger"))
-			.max(20, t("sign_up.passwordLess"))
+			.min(8, t("passwordLonger"))
+			.max(20, t("passwordLess"))
 			.required(t("required")),
 	});
 
 	return (
 		<div className="w-screen h-screen flex dark:bg-black">
 			<div className="flex-1 flex flex-col items-center justify-center bg-[#C9AC8CED] dark:bg-[#D1B89DED]">
-				<img src={Sign_up} width={500} height={500} alt={t("sign_up.imgAlt")} />
+				<img src={sign_up} width={500} height={500} alt={t("sign_up.imgAlt")} />
 			</div>
 			<div className="flex-1 flex flex-col items-center justify-center">
 				<div className="max-w-[330px] w-full">
@@ -103,7 +103,7 @@ export const SignUp = () => {
 									/>
 									<FieldComponent
 										haveError={formik.errors.email}
-										holder={t("sign_up.emailHolder")}
+										holder={t("emailHolder")}
 										isRequired={true}
 										isTouched={formik.touched.email}
 										name="email"
@@ -111,7 +111,7 @@ export const SignUp = () => {
 									/>
 									<FieldComponent
 										haveError={formik.errors.password}
-										holder={t("sign_up.passwordHolder")}
+										holder={t("passwordHolder")}
 										isRequired={true}
 										isTouched={formik.touched.password}
 										name="password"
@@ -122,7 +122,7 @@ export const SignUp = () => {
 										className="bg-[#152540] py-3.5 text-white font-medium text-lg rounded-full !font-roboto dark:bg-white dark:text-black"
 										disabled={formik.dirty && formik.isValid ? false : true}
 										type="submit">
-										{t("sign_up.submitBtn")}
+										{t("submitBtn")}
 									</button>
 								</Form>
 							);

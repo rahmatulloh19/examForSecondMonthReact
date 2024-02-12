@@ -6,7 +6,9 @@ const instance = axios.create({
 
 instance.interceptors.request.use((config) => {
 	const token = localStorage.getItem("token_key") || "";
-	if (token) config.headers.Authorization = localStorage.getItem("token_key");
+	if (token) {
+		config.headers.Authorization = localStorage.getItem("token_key");
+	}
 
 	return config;
 });
