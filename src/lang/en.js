@@ -75,5 +75,8 @@ export const en = {
 		currentPasswordMessage: "Please enter your password.",
 		newPassword: "New Password",
 		newPasswordMessage: "Please enter your new password.",
+		language: "Language",
+		languageMessage: "Please, select language",
+		theme: "Theme",
 	},
 };

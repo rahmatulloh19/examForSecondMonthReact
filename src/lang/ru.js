@@ -75,5 +75,8 @@ export const ru = {
 		currentPasswordMessage: "Пожалуйста, введите свой пароль.",
 		newPassword: "Новый пароль",
 		newPasswordMessage: "Пожалуйста, введите свой новый пароль.",
+		language: "Языки",
+		languageMessage: "Пожалуйста, выберите язык",
+		theme: "Тема",
 	},
 };

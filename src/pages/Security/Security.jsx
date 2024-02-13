@@ -34,7 +34,7 @@ export const Security = () => {
 	};
 
 	return (
-		<div className="max-w-[708px] mx-auto pt-[68px]">
+		<div className="max-w-[708px] mx-auto w-full pt-[68px]">
 			<h1 className="text-lg font-bold text-[#212121] mb-8 dark:text-white">
 				{t("userInfo.securityTitle")}
 			</h1>
@@ -52,6 +52,7 @@ export const Security = () => {
 										className="outline-none dark:text-black bg-[#F3F6F9] py-3 px-5 rounded"
 										type="email"
 										name="email"
+										required
 										placeholder={t("emailHolder")}
 									/>
 									<span className="text-[#B5B5C3] text-xs mt-[3px] dark:text-white">
@@ -64,6 +65,7 @@ export const Security = () => {
 										className="outline-none dark:text-black bg-[#F3F6F9] py-3 px-5 rounded"
 										type="password"
 										name="currentPassword"
+										required
 										placeholder={t("userInfo.currentPassword")}
 									/>
 									<span className="text-[#B5B5C3] text-xs mt-[3px] dark:text-white">
@@ -76,6 +78,7 @@ export const Security = () => {
 										className="outline-none dark:text-black bg-[#F3F6F9] py-3 px-5 rounded"
 										type="password"
 										name="newPassword"
+										required
 										placeholder={t("userInfo.newPassword")}
 									/>
 									<span className="text-[#B5B5C3] text-xs mt-[3px] dark:text-white">

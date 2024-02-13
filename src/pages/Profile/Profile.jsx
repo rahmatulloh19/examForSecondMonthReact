@@ -117,6 +117,7 @@ export const Profile = () => {
 										accept="image/*"
 										type="file"
 										name="image"
+										required
 										onBlur={formik.handleBlur("")}
 										onChange={(evt) => {
 											console.log(formik.getFieldProps("image"));
@@ -136,6 +137,7 @@ export const Profile = () => {
 											className="mt-[7px] mb-[3px] outline-none py-3 px-5 rounded dark:text-black bg-[#F3F6F9]"
 											type="text"
 											name="first_name"
+											required
 											placeholder={t("sign_up.firstNameHolder")}
 										/>
 										<span className=" text-[#B5B5C3]">{t("userInfo.firstNameMessage")}</span>
@@ -146,6 +148,7 @@ export const Profile = () => {
 											className="mt-[7px] mb-[3px] outline-none py-3 px-5 rounded dark:text-black bg-[#F3F6F9]"
 											type="text"
 											name="last_name"
+											required
 											placeholder={t("sign_up.lastNameHolder")}
 										/>
 										<span className=" text-[#B5B5C3]">{t("userInfo.lastNameMessage")}</span>
@@ -156,6 +159,7 @@ export const Profile = () => {
 											className="mt-[7px] mb-[3px] outline-none py-3 px-5 rounded dark:text-black bg-[#F3F6F9]"
 											type="text"
 											name="phone"
+											required
 											placeholder={t("sign_up.phoneHolder")}
 										/>
 										<span className=" text-[#B5B5C3]">{t("userInfo.phoneMessage")}</span>

@@ -75,5 +75,8 @@ export const uz = {
 		currentPasswordMessage: "Iltimos, parolingizni kiriting.",
 		newPassword: "Yangi parol",
 		newPasswordMessage: "Iltimos, yangi parolingizni kiriting.",
+		language: "Tillar",
+		languageMessage: "Iltimos, tilni tanlang",
+		theme: "Mavzu",
 	},
 };

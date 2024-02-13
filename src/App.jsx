@@ -10,26 +10,6 @@ function App() {
 		instance.defaults.headers.common["Authorization"] = auth;
 	}
 
-	// <button
-	// 	onClick={() => {
-	// 		document.body.classList.contains("dark") ? removeDark() : addDark();
-	// 	}}>
-	// 	Click
-	// </button>;
-
-	// if (localStorage.getItem("mode")) {
-	// 	document.body.classList.add("dark");
-	// }
-	// function addDark() {
-	// 	document.body.classList.add("dark");
-	// 	localStorage.setItem("mode", "dark");
-	// }
-
-	// function removeDark() {
-	// 	document.body.classList.remove("dark");
-	// 	localStorage.removeItem("mode");
-	// }
-
 	if (auth || localStorage.getItem("token")) {
 		return <Private />;
 	}
