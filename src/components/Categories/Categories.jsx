@@ -1,8 +1,10 @@
 import { t } from "i18next";
 import instance from "../../axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Categories = ({ isBooks }) => {
+	const navigate = useNavigate();
 	const [categories, setCategories] = useState([]);
 
 	useEffect(() => {
@@ -60,7 +62,10 @@ export const Categories = ({ isBooks }) => {
 					<ul className="grid grid-cols-4 gap-x-5 gap-y-6">
 						{array &&
 							array.map((item, index) => (
-								<li className="rounded-[22px] bg-[#F5F5F5] dark:bg-[#1E1E1E]" key={index}>
+								<li
+									className="cursor-pointer rounded-[22px] bg-[#F5F5F5] dark:bg-[#1E1E1E]"
+									key={index}
+									onClick={() => navigate(`/author/${index + 1}`)}>
 									<img
 										className="rounded-t-[22px]"
 										src="https://placehold.co/295x244"
@@ -86,7 +91,10 @@ export const Categories = ({ isBooks }) => {
 					<ul className="grid grid-cols-6 gap-x-5 gap-y-6">
 						{array &&
 							array.map((item, index) => (
-								<li key={index}>
+								<li
+									className="cursor-pointer"
+									key={index}
+									onClick={() => navigate(`/book/${index + 1}`)}>
 									<img
 										className="rounded-[15px] mb-3"
 										src="https://placehold.co/190x283"

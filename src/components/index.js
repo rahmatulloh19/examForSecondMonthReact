@@ -7,6 +7,7 @@ import { Carousel } from "./Carousel";
 import { Search } from "./Search";
 import { Categories } from "./Categories";
 import { Info } from "./Info";
+import { AlwaysSwipe } from "./AlwaysSwipe";
 
 export {
 	NotFound,
@@ -18,4 +19,5 @@ export {
 	Search,
 	Categories,
 	Info,
+	AlwaysSwipe,
 };

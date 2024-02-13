@@ -10,7 +10,7 @@ export const Info = ({ isBook }) => {
 						src="https://placehold.co/505x681"
 						width={505}
 						height={681}
-						alt
+						alt=""
 					/>
 					<div className="pt-11">
 						<h1 className="dark:text-[#C9AC8C] text-[#D1B89D] mb-2 text-5xl leading-[72px]">
