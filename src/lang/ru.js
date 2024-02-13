@@ -68,5 +68,12 @@ export const ru = {
 		phoneLabel: "Номер телефона",
 		phoneMessage: "Пожалуйста, введите свой номер телефона",
 		btnSubmit: "Сохранить изменения",
+		btnBack: "Назад",
+		securityTitle: "Измените или Восстановите свой Пароль:",
+		emailMessage: "Пожалуйста, введите свой адрес электронной почты",
+		currentPassword: "Текущий пароль",
+		currentPasswordMessage: "Пожалуйста, введите свой пароль.",
+		newPassword: "Новый пароль",
+		newPasswordMessage: "Пожалуйста, введите свой новый пароль.",
 	},
 };

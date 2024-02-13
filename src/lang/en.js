@@ -68,5 +68,12 @@ export const en = {
 		phoneLabel: "Phone",
 		phoneMessage: "Please enter your phone number",
 		btnSubmit: "Save Changes",
+		btnBack: "Back",
+		securityTitle: "Change Or Recover Your Password:",
+		emailMessage: "Please enter your email address",
+		currentPassword: "Current password",
+		currentPasswordMessage: "Please enter your password.",
+		newPassword: "New Password",
+		newPasswordMessage: "Please enter your new password.",
 	},
 };

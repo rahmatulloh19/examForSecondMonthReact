@@ -3,9 +3,11 @@ import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { t } from "i18next";
 import instance from "../../axios";
-import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Profile = () => {
+	const navigate = useNavigate();
+
 	let initialValues = {
 		first_name: "",
 		last_name: "",
@@ -159,11 +161,19 @@ export const Profile = () => {
 										<span className=" text-[#B5B5C3]">{t("userInfo.phoneMessage")}</span>
 									</label>
 
-									<button
-										className="dark:bg-[#F1F6FF] py-3 min-w-[142px] text-center text-sm font-bold ms-auto px-5 rounded dark:text-[#0D0D0D] bg-[#152540] text-white"
-										type="submit">
-										{t("userInfo.btnSubmit")}
-									</button>
+									<div className="flex justify-end gap-4">
+										<button
+											className="dark:bg-[#F1F6FF] py-3 min-w-[142px] text-center text-sm font-bold px-5 rounded dark:text-[#0D0D0D] bg-[#152540] text-white"
+											type="button"
+											onClick={() => navigate("/")}>
+											{t("userInfo.btnBack")}
+										</button>
+										<button
+											className="dark:bg-[#F1F6FF] py-3 min-w-[142px] text-center text-sm font-bold px-5 rounded dark:text-[#0D0D0D] bg-[#152540] text-white"
+											type="submit">
+											{t("userInfo.btnSubmit")}
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>

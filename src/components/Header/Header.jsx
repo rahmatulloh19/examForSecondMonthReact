@@ -57,7 +57,13 @@ export const Header = () => {
 										role="button"
 										className="bg-transparent text-transparent border-none w-[49px] h-[49px] flex items-center">
 										{img ? (
-											<img src={img} width={49} height={49} alt="" />
+											<img
+												className="w-full shrink-0 h-full object-cover rounded-full"
+												src={"http://localhost:5000/" + img}
+												width={49}
+												height={49}
+												alt=""
+											/>
 										) : (
 											<FaRegUserCircle className="text-[#0D0D0D] dark:text-white shrink-0 w-full h-full" />
 										)}

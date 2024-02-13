@@ -68,5 +68,12 @@ export const uz = {
 		phoneLabel: "Telefon raqam",
 		phoneMessage: "Iltimos telefon raqamingizni kiriting",
 		btnSubmit: "O'zgarishlarni Saqlang",
+		btnBack: "Ortga",
+		securityTitle: "Parolingizni O'zgartiring Yoki Tiklang:",
+		emailMessage: "Iltimos, elektron pochta manzilingizni kiriting",
+		currentPassword: "Joriy parol",
+		currentPasswordMessage: "Iltimos, parolingizni kiriting.",
+		newPassword: "Yangi parol",
+		newPasswordMessage: "Iltimos, yangi parolingizni kiriting.",
 	},
 };
