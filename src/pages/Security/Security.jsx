@@ -35,7 +35,9 @@ export const Security = () => {
 
 	return (
 		<div className="max-w-[708px] mx-auto pt-[68px]">
-			<h1 className="text-lg font-bold text-[#212121] mb-8">{t("userInfo.securityTitle")}</h1>
+			<h1 className="text-lg font-bold text-[#212121] mb-8 dark:text-white">
+				{t("userInfo.securityTitle")}
+			</h1>
 			<Formik
 				initialValues={initialValues}
 				onSubmit={handleSubmit}
@@ -44,39 +46,39 @@ export const Security = () => {
 					return (
 						<Form className="flex flex-col">
 							<>
-								<label className="flex flex-col text-sm text-[#464E5F] mb-[22px]">
+								<label className="flex flex-col text-sm text-[#464E5F] dark:text-white mb-[22px]">
 									{t("emailHolder")}
 									<Field
-										className="outline-none bg-[#F3F6F9] py-3 px-5 rounded"
+										className="outline-none dark:text-black bg-[#F3F6F9] py-3 px-5 rounded"
 										type="email"
 										name="email"
 										placeholder={t("emailHolder")}
 									/>
-									<span className="text-[#B5B5C3] text-xs mt-[3px]">
+									<span className="text-[#B5B5C3] text-xs mt-[3px] dark:text-white">
 										{t("userInfo.emailMessage")}
 									</span>
 								</label>
-								<label className="flex flex-col text-sm text-[#464E5F] mb-[16px]">
+								<label className="flex flex-col text-sm text-[#464E5F] mb-[16px] dark:text-white">
 									{t("userInfo.currentPassword")}
 									<Field
-										className="outline-none bg-[#F3F6F9] py-3 px-5 rounded"
+										className="outline-none dark:text-black bg-[#F3F6F9] py-3 px-5 rounded"
 										type="password"
 										name="currentPassword"
 										placeholder={t("userInfo.currentPassword")}
 									/>
-									<span className="text-[#B5B5C3] text-xs mt-[3px]">
+									<span className="text-[#B5B5C3] text-xs mt-[3px] dark:text-white">
 										{t("userInfo.currentPasswordMessage")}
 									</span>
 								</label>
-								<label className="flex flex-col mb-[89px] text-sm text-[#464E5F]">
+								<label className="flex flex-col mb-[89px] text-sm text-[#464E5F] dark:text-white">
 									{t("userInfo.newPassword")}
 									<Field
-										className="outline-none bg-[#F3F6F9] py-3 px-5 rounded"
+										className="outline-none dark:text-black bg-[#F3F6F9] py-3 px-5 rounded"
 										type="password"
 										name="newPassword"
 										placeholder={t("userInfo.newPassword")}
 									/>
-									<span className="text-[#B5B5C3] text-xs mt-[3px]">
+									<span className="text-[#B5B5C3] text-xs mt-[3px] dark:text-white">
 										{t("userInfo.newPasswordMessage")}
 									</span>
 								</label>
