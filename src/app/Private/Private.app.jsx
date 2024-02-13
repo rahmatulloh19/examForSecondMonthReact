@@ -1,6 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { NotFound } from "../../components";
-import { AddingPage, Books, Home, Profile, Security, Settings, SinglePage } from "../../pages";
+import {
+	AddingPage,
+	Books,
+	Home,
+	Profile,
+	Security,
+	Settings,
+	SinglePage,
+	UserInfo,
+} from "../../pages";
 
 export const Private = () => {
 	return (
@@ -10,7 +19,7 @@ export const Private = () => {
 			<Route path="/books" element={<Books />} />
 			<Route path="/author/:id" element={<SinglePage />} />
 			<Route path="/book/:id" element={<SinglePage isBook={true} />} />
-			<Route path="user-info">
+			<Route path="user-info" element={<UserInfo />}>
 				<Route index element={<Profile />} />
 				<Route path="security" element={<Security />} />
 				<Route path="settings" element={<Settings />} />

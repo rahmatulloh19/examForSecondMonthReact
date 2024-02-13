@@ -8,6 +8,7 @@ import { Search } from "./Search";
 import { Categories } from "./Categories";
 import { Info } from "./Info";
 import { AlwaysSwipe } from "./AlwaysSwipe";
+import { UserNavbar } from "./UserNavbar";
 
 export {
 	NotFound,
@@ -20,4 +21,5 @@ export {
 	Categories,
 	Info,
 	AlwaysSwipe,
+	UserNavbar,
 };

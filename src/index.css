@@ -68,8 +68,6 @@ img {
 	text-align: center;
 	font-size: 18px;
 	background: #fff;
-
-	/* Center slide text vertically */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -87,7 +85,6 @@ img {
 	left: 86px !important;
 	bottom: 88px !important;
 	color: white;
-	/* justify-content: start; */
 }
 
 .swiper-pagination-bullet {
@@ -130,4 +127,20 @@ a {
 .dark .author__item {
 	background-image: url("./assets/images/darkdecor.svg"),
 		url("./assets/images/darkdecor.svg");
+}
+
+.active-user-nav {
+	@apply bg-[#DDE6F5] text-[#152540]
+}
+
+.dark .active-user-nav {
+	@apply text-black bg-[#F3F6F9];
+}
+
+.active-user-nav span {
+	@apply text-white bg-[#152540]
+}
+
+.dark .active-user-nav span {
+	@apply bg-black text-white;
 }
