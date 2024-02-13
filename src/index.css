@@ -15,8 +15,12 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	margin: 0;
 	font-family: 'Poppins', sans-serif;
+	background-color: #fff;
+}
+
+.dark body {
+	background-color: #191919;
 }
 
 #root {

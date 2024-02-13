@@ -60,5 +60,13 @@ export const uz = {
 		profile: "Profil",
 		security: "Maxfiylik",
 		settings: "Sozlamalar",
+		my: "Mening profilim",
+		firstNameLabel: "Ism",
+		firstNameMessage: "Iltimos ismingizni kiriting",
+		lastNameLabel: "Familiya",
+		lastNameMessage: "Iltimos familiyangizni kiriting",
+		phoneLabel: "Telefon raqam",
+		phoneMessage: "Iltimos telefon raqamingizni kiriting",
+		btnSubmit: "O'zgarishlarni Saqlang",
 	},
 };
