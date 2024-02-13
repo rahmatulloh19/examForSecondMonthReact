@@ -56,4 +56,9 @@ export const en = {
 		price: "Book price:",
 		fullInfo: "Full information",
 	},
+	userInfo: {
+		profile: "Profile",
+		security: "Security",
+		settings: "Settings",
+	},
 };

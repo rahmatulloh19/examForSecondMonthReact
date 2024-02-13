@@ -56,4 +56,9 @@ export const ru = {
 		price: "Цена книги:",
 		fullInfo: "Полная информация",
 	},
+	userInfo: {
+		profile: "Профиль",
+		security: "Безопасность",
+		settings: "Настройки",
+	},
 };

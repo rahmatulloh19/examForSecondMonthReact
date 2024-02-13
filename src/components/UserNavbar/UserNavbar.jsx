@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import { NavLink } from "react-router-dom";
 
 export const UserNavbar = () => {
@@ -16,7 +17,7 @@ export const UserNavbar = () => {
 						<span className="w-[35px] h-[35px] inline-flex items-center justify-center me-2 rounded border border-[#E5EAEE] bg-[#E5EAEE] dark:bg-transparent text-[#3699FF] dark:text-[#a3a3a3]">
 							1
 						</span>
-						Profile
+						{t("userInfo.profile")}
 					</NavLink>
 				</li>
 				<li className="">
@@ -31,7 +32,7 @@ export const UserNavbar = () => {
 						<span className="w-[35px] h-[35px] inline-flex items-center justify-center me-2 rounded border border-[#E5EAEE] bg-[#E5EAEE] dark:bg-transparent text-[#3699FF] dark:text-[#a3a3a3]">
 							2
 						</span>
-						Security
+						{t("userInfo.security")}
 					</NavLink>
 				</li>
 				<li className="">
@@ -46,7 +47,7 @@ export const UserNavbar = () => {
 						<span className="w-[35px] h-[35px] inline-flex items-center justify-center me-2 rounded border border-[#E5EAEE] bg-[#E5EAEE] dark:bg-transparent text-[#3699FF] dark:text-[#a3a3a3]">
 							3
 						</span>
-						Settings
+						{t("userInfo.settings")}
 					</NavLink>
 				</li>
 			</ul>

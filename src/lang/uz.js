@@ -56,4 +56,9 @@ export const uz = {
 		price: "Kitob narxi:",
 		fullInfo: "To'liq ma'lumot",
 	},
+	userInfo: {
+		profile: "Profil",
+		security: "Maxfiylik",
+		settings: "Sozlamalar",
+	},
 };
