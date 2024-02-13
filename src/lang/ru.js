@@ -60,5 +60,13 @@ export const ru = {
 		profile: "Профиль",
 		security: "Безопасность",
 		settings: "Настройки",
+		my: "Мой профиль",
+		firstNameLabel: "Имя",
+		firstNameMessage: "Пожалуйста, введите свое имя",
+		lastNameLabel: "Фамилия",
+		lastNameMessage: "Пожалуйста, введите свою фамилию",
+		phoneLabel: "Номер телефона",
+		phoneMessage: "Пожалуйста, введите свой номер телефона",
+		btnSubmit: "Сохранить изменения",
 	},
 };

@@ -60,5 +60,13 @@ export const en = {
 		profile: "Profile",
 		security: "Security",
 		settings: "Settings",
+		my: "My Profil",
+		firstNameLabel: "First Name",
+		firstNameMessage: "Please enter your first name",
+		lastNameLabel: "Last Name",
+		lastNameMessage: "Please enter your last name",
+		phoneLabel: "Phone",
+		phoneMessage: "Please enter your phone number",
+		btnSubmit: "Save Changes",
 	},
 };
