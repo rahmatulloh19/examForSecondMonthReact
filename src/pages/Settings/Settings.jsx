@@ -9,12 +9,12 @@ export const Settings = () => {
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
 
-		!evt.target[1].checked &&
-		document.querySelector("html").classList.contains("dark") &&
-		!localStorage.getItem("mode")
-			? removeDark()
-			: addDark();
-
+		if (evt.target[1].checked) {
+			addDark();
+		}
+		if (!evt.target[1].checked) {
+			removeDark();
+		}
 		localStorage.setItem("lang", evt.target[0].value);
 		i18n.changeLanguage(evt.target[0].value);
 	};

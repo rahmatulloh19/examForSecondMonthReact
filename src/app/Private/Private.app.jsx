@@ -12,6 +12,9 @@ import {
 } from "../../pages";
 
 export const Private = () => {
+	if (localStorage.getItem("mode")) {
+		document.querySelector("html").classList.add("dark");
+	}
 	return (
 		<Routes>
 			<Route path="*" element={<NotFound />} />
@@ -25,7 +28,7 @@ export const Private = () => {
 				<Route path="settings" element={<Settings />} />
 			</Route>
 			<Route path="/add-book" element={<AddingPage />} />
-			<Route path="/add-author" element={<AddingPage />} />
+			<Route path="/add-author" element={<AddingPage isBook={true} />} />
 		</Routes>
 	);
 };

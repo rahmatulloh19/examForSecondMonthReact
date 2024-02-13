@@ -71,7 +71,7 @@ export const Profile = () => {
 
 				return (
 					<Form>
-						<div className="flex gap-x-[109px] mx-auto w-[993px] pt-[83px] pb-[89px] items-start">
+						<div className="flex gap-x-[109px] mx-auto w-[993px] pt-[40px] pb-[40px] items-start">
 							<div className="relative w-[175px] h-[175px]">
 								{initialValues.image ? (
 									<img
