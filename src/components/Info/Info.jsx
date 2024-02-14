@@ -1,20 +1,39 @@
 import { t } from "i18next";
+import { useParams } from "react-router-dom";
+import instance from "../../axios";
+import { useEffect, useState } from "react";
 
 export const Info = ({ isBook }) => {
+	const [renderingData, setRenderingData] = useState({});
+
+	const param = useParams();
+
+	useEffect(() => {
+		isBook
+			? instance(`/book/bookId/${param.id}`).then((res) => {
+					res.status === 201 && setRenderingData(res.data);
+			  })
+			: instance(`/author/authorId/${param.id}`).then((res) => {
+					res.status === 201 && setRenderingData(res.data);
+			  });
+	}, []);
+
 	return (
 		<section className="pt-3.5">
 			<div className="container">
 				<div className="flex gap-x-16 mb-[100px]">
 					<img
-						className="rounded-[20px]"
-						src="https://placehold.co/505x681"
+						className="rounded-[20px] w-[505px] h-[681px] object-cover"
+						src={"http://localhost:5000/" + renderingData.image}
 						width={505}
 						height={681}
 						alt=""
 					/>
-					<div className="pt-11">
+					<div className="pt-11 w-full">
 						<h1 className="dark:text-[#C9AC8C] text-[#D1B89D] mb-2 text-5xl leading-[72px]">
-							O’tkir Hoshimov
+							{!isBook && renderingData.id
+								? `${renderingData.first_name} ${renderingData.last_name}`
+								: `${renderingData.title}`}
 						</h1>
 						{isBook && (
 							<ol className="mb-10">
@@ -59,35 +78,24 @@ export const Info = ({ isBook }) => {
 							</div>
 						)}
 						<p className="dark:text-[#FFFFFFCC] text-[#0D0D0DCC] leading-6 mb-11">
-							Oʻtkir Hoshimov 1941 yil Toshkent viloyatining Zangiota (hozirgi Chilonzor) tumanidagi
-							Doʻmbiravot mavzeida tugʻildi. Oʻ. Hoshimov mehnat faoliyatini erta boshladi. Toshkent
-							Davlat universiteti (hozirgi Oʻzbekiston Milliy universiteti)ning jurnalistika
-							kulliyotida oʻqish bilan baravar gazeta tahririyatida ishladi. 1959 yildan 1963
-							yilgacha “Temiryoʻlchi”, “Qizil Oʻzbekiston”, “Transportniy rabochiy” gazetalarida xat
-							tashuvchi, mussaxhih, tarjimon boʻlib ishladi. Soʻng “Toshkent haqiqati” gazetasida
-							adabiy xodim (1963–1966), “Toshkent oqshomi” gazetasida boʻlim mudiri (1966–1982), Gʻ.
-							Gʻulom nomidagi Adabiyot va sanʼat nashriyotida bosh muharrir oʻrinbosari (1982–1985)
-							boʻldi. 1985–1995 yillarda “Sharq yulduzi” jurnaliga bosh muharrirlik qildi. 1995
-							yildan 2005 yilgacha Oʻzbekiston Respublikasi Oliy Majlisining Matbuot va axborot
-							qoʻmitasi raisi lavozimida ishladi. 2005 yildan “Teatr“ jurnalida bosh muharrir boʻlib
-							ishladi.
+							{(renderingData.id && renderingData.bio) || renderingData.description}
 						</p>
 						{!isBook && (
 							<div className="flex dark:text-[#C9AC8C] text-black items-center gap-x-4 text-xs leading-[18px]">
 								<div className="flex flex-col dark:text-[#FFFFFFCC] text-[#0D0D0DCC]">
 									{t("singlePage.dateBirth")}
 									<strong className="dark:text-[#C9AC8C] text-black font-normal text-[39px] leading-[56px]">
-										1941
+										{renderingData.date_of_birth && renderingData.date_of_birth}
 									</strong>
-									Toshkent, Uzbekistan
+									{renderingData.country && renderingData.country}
 								</div>
 								<span className="text-[39px]">-</span>
 								<div className="flex flex-col dark:text-[#FFFFFFCC] text-[#0D0D0DCC]">
 									{t("singlePage.dateDead")}
 									<strong className="dark:text-[#C9AC8C] text-black font-normal text-[39px] leading-[56px]">
-										2013
+										{renderingData.date_of_death && renderingData.date_of_death}
 									</strong>
-									Toshkent, Uzbekistan
+									{renderingData.country && renderingData.country}
 								</div>
 							</div>
 						)}

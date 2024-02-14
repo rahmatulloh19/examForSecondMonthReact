@@ -3,7 +3,7 @@ import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { t } from "i18next";
 import instance from "../../axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Profile = () => {
 	const navigate = useNavigate();

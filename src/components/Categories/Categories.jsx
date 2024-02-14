@@ -45,8 +45,6 @@ export const Categories = ({ isBooks }) => {
 		setCategoryId(id);
 	};
 
-	console.log(bookAuthors);
-
 	return (
 		<section className="categories">
 			<div className="container">
@@ -95,7 +93,7 @@ export const Categories = ({ isBooks }) => {
 				{!isBooks ? (
 					<ul className="grid grid-cols-4 gap-x-5 gap-y-6">
 						{authors[0] &&
-							authors.map((item, index) => (
+							authors.map((item) => (
 								<li
 									className="cursor-pointer rounded-[22px] bg-[#F5F5F5] dark:bg-[#1E1E1E]"
 									key={item.id}
