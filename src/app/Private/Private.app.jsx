@@ -27,8 +27,8 @@ export const Private = () => {
 				<Route path="security" element={<Security />} />
 				<Route path="settings" element={<Settings />} />
 			</Route>
-			<Route path="/add-book" element={<AddingPage />} />
-			<Route path="/add-author" element={<AddingPage isBook={true} />} />
+			<Route path="/add-book" element={<AddingPage isBook={true} />} />
+			<Route path="/add-author" element={<AddingPage />} />
 		</Routes>
 	);
 };

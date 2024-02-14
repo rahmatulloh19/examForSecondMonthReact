@@ -9,6 +9,7 @@ import { Categories } from "./Categories";
 import { Info } from "./Info";
 import { AlwaysSwipe } from "./AlwaysSwipe";
 import { UserNavbar } from "./UserNavbar";
+import { DragAndDrop } from "./DragAndDrop";
 
 export {
 	NotFound,
@@ -22,4 +23,5 @@ export {
 	Info,
 	AlwaysSwipe,
 	UserNavbar,
+	DragAndDrop,
 };

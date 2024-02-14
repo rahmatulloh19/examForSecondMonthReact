@@ -79,4 +79,17 @@ export const uz = {
 		languageMessage: "Iltimos, tilni tanlang",
 		theme: "Mavzu",
 	},
+	adding_page: {
+		dateValidation: "Faqat yilni kiriting",
+		countryValidation: "Mamlakat so'zining uzunligi 3 dan ortiq va 20 dan kam bo'lishi kerak",
+		bioValidation: "Biografiyaning uzunligi 3 dan ortiq va 1000 dan kam bo'lishi kerak",
+		genreIdValidation: "Faqat son bo'lishi kerak",
+		titleValidation: "Sarlavha so'zining uzunligi 3 dan ortiq va 20 dan kam bo'lishi kerak",
+		pageValidation: "Sahifalar soni birdan katta bo'lishi kerak",
+		yearAndPriceValidation: "Qiymat 0 dan katta bo'lishi lozim",
+		descValidation: "Ta'rifning uzunligi 3 dan ortiq va 1000 dan kam bo'lishi kerak",
+		dragAndDrop: "Yuklash uchun faylni bosing yoki ushbu maydonga torting",
+		titleBook: "Kitob qo'shish",
+		title: "Muallif qo'shish",
+	},
 };
