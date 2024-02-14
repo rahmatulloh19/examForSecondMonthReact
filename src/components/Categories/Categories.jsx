@@ -6,12 +6,46 @@ import { useNavigate } from "react-router-dom";
 export const Categories = ({ isBooks }) => {
 	const navigate = useNavigate();
 	const [categories, setCategories] = useState([]);
+	const [categoryId, setCategoryId] = useState(1);
+	const [authors, setAuthors] = useState([]);
+	const [books, setBooks] = useState([]);
+	const [bookAuthors, setBookAuthors] = useState([]);
 
 	useEffect(() => {
 		instance.get("/genre").then((res) => setCategories(res.data));
 	}, []);
 
-	const array = new Array(22).fill(1);
+	useEffect(() => {
+		instance(`/author/genreId/${categoryId}`).then((res) => {
+			res.status === 201 && setAuthors(res.data);
+		});
+		instance(`/book/genreId/${categoryId}`)
+			.then((res) => {
+				res.status === 201 && setBooks(res.data);
+				return res.data.reduce((acc, item) => {
+					acc.push(item.author_id);
+					return acc;
+				}, []);
+			})
+			.then((authorId) => {
+				return (
+					authorId &&
+					Promise.all(
+						authorId.map((id) => instance(`/author/authorId/${id}`).then((res) => res.data))
+					)
+				);
+			})
+			.then((authors) => {
+				authors[0] &&
+					setBookAuthors(authors.map((author) => `${author.first_name} ${author.last_name}`));
+			});
+	}, [categoryId]);
+
+	const handleChange = (id) => {
+		setCategoryId(id);
+	};
+
+	console.log(bookAuthors);
 
 	return (
 		<section className="categories">
@@ -22,7 +56,7 @@ export const Categories = ({ isBooks }) => {
 				<ul className="flex justify-center gap-x-[54px] mb-[30px]">
 					{categories &&
 						categories.map((item) => {
-							if (item.id === 2) {
+							if (item.id === categoryId) {
 								return (
 									<li key={item.id}>
 										<label>
@@ -31,6 +65,7 @@ export const Categories = ({ isBooks }) => {
 												type="radio"
 												defaultChecked
 												name="timurid_period"
+												onChange={() => handleChange(item.id)}
 											/>
 											<span className="cursor-pointer text-lg dark:text-[#ffffff99] text-[#0D0D0D99]">
 												{item.name}
@@ -41,15 +76,14 @@ export const Categories = ({ isBooks }) => {
 							}
 							return (
 								<li key={item.id}>
-									<label
-										className="cursor-pointer
-									">
+									<label>
 										<input
 											className="visually-hidden categories__input"
 											type="radio"
 											name="timurid_period"
+											onChange={() => handleChange(item.id)}
 										/>
-										<span className="text-lg dark:text-[#ffffff99] text-[#0D0D0D99]">
+										<span className="cursor-pointer text-lg dark:text-[#ffffff99] text-[#0D0D0D99]">
 											{item.name}
 										</span>
 									</label>
@@ -60,27 +94,27 @@ export const Categories = ({ isBooks }) => {
 
 				{!isBooks ? (
 					<ul className="grid grid-cols-4 gap-x-5 gap-y-6">
-						{array &&
-							array.map((item, index) => (
+						{authors[0] &&
+							authors.map((item, index) => (
 								<li
 									className="cursor-pointer rounded-[22px] bg-[#F5F5F5] dark:bg-[#1E1E1E]"
-									key={index}
-									onClick={() => navigate(`/author/${index + 1}`)}>
+									key={item.id}
+									onClick={() => navigate(`/author/${item.id}`)}>
 									<img
-										className="rounded-t-[22px]"
-										src="https://placehold.co/295x244"
+										className="rounded-t-[22px] w-[295px] h-[244px] object-cover"
+										src={"http://localhost:5000/" + item.image}
 										alt=""
 										width={295}
 										height={244}
 									/>
 									<div className="author__item min-h-[141px] p-4 pt-3 dark:text-[#C9AC8C] text-black rounded-b-[22px]">
-										<h3 className="text-2xl font-bold leading-9 mb-1.5">Abdulla Avloniy</h3>
+										<h3 className="text-2xl font-bold leading-9 mb-1.5">{`${item.first_name} ${item.last_name}`}</h3>
 										<div className="flex justify-between">
 											<span className="text-justify text-[#00000099] leading-6 dark:text-[#FFFFFF99]">
-												1878-1934
+												{`${item.date_of_birth}-${item.date_of_death}`}
 											</span>
 											<span className="text-justify text-[#00000099] leading-6 dark:text-[#FFFFFF99]">
-												Uzbekiston
+												{item.country}
 											</span>
 										</div>
 									</div>
@@ -89,27 +123,29 @@ export const Categories = ({ isBooks }) => {
 					</ul>
 				) : (
 					<ul className="grid grid-cols-6 gap-x-5 gap-y-6">
-						{array &&
-							array.map((item, index) => (
-								<li
-									className="cursor-pointer"
-									key={index}
-									onClick={() => navigate(`/book/${index + 1}`)}>
-									<img
-										className="rounded-[15px] mb-3"
-										src="https://placehold.co/190x283"
-										width={190}
-										height={283}
-										alt=""
-									/>
-									<h3 className="text-lg font-bold leading-9 mb-1.5 dark:text-[#C9AC8C] text-black">
-										Dunyoning ishlari
-									</h3>
-									<span className="text-justify text-[#00000099] leading-6 dark:text-[#FFFFFF99]">
-										O’tkir Hoshimov
-									</span>
-								</li>
-							))}
+						{books[0] &&
+							books.map((item, index) => {
+								return (
+									<li
+										className="cursor-pointer"
+										key={index}
+										onClick={() => navigate(`/book/${item.id}`)}>
+										<img
+											className="rounded-[15px] mb-3 w-[190px] h-[283px] object-cover"
+											src={`http://localhost:5000/${item.image}`}
+											width={190}
+											height={283}
+											alt=""
+										/>
+										<h3 className="text-lg font-bold leading-9 mb-1.5 dark:text-[#C9AC8C] text-black">
+											{item.title}
+										</h3>
+										<span className="text-justify text-[#00000099] leading-6 dark:text-[#FFFFFF99]">
+											{bookAuthors && bookAuthors[index]}
+										</span>
+									</li>
+								);
+							})}
 					</ul>
 				)}
 			</div>

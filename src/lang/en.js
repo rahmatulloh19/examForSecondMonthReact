@@ -60,7 +60,7 @@ export const en = {
 		profile: "Profile",
 		security: "Security",
 		settings: "Settings",
-		my: "My Profil",
+		my: "My Profile",
 		firstNameLabel: "First Name",
 		firstNameMessage: "Please enter your first name",
 		lastNameLabel: "Last Name",
