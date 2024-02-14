@@ -1,8 +1,17 @@
 import { t } from "i18next";
 
-export const DragAndDrop = ({ setFieldValue }) => {
+export const DragAndDrop = ({ setFieldValue, setFieldError, setFieldTouched }) => {
+	const handleDrop = (evt) => {
+		evt.preventDefault();
+		const [file] = [...evt.dataTransfer.files];
+		file ? setFieldValue(file) : setFieldError("image");
+	};
+
 	return (
-		<label className="cursor-pointer flex flex-col items-center justify-center border border-dashed border-[#0000004d] rounded-[17px] w-[315px] h-[428px] bg-[#F8F8F8] dark:bg-[#4D4D4D] dark:border-[#FFFFFF4D]">
+		<label
+			className="cursor-pointer flex flex-col items-center justify-center border border-dashed border-[#0000004d] rounded-[17px] w-[315px] h-[428px] bg-[#F8F8F8] dark:bg-[#4D4D4D] dark:border-[#FFFFFF4D]"
+			onDrop={(evt) => handleDrop(evt)}
+			onDragOver={(evt) => evt.preventDefault()}>
 			<svg
 				className="text-[#AEAEAE] dark:text-[#828282]"
 				width={63}
@@ -41,8 +50,12 @@ export const DragAndDrop = ({ setFieldValue }) => {
 				className="visually-hidden"
 				required
 				type="file"
+				name="image"
 				accept=".png, .jpeg"
-				onChange={(evt) => setFieldValue("image", evt.target.files[0])}
+				onBlur={() => setFieldTouched("image")}
+				onChange={(evt) =>
+					evt.target.files[0] ? setFieldValue("image", evt.target.files[0]) : setFieldError("image")
+				}
 			/>
 		</label>
 	);

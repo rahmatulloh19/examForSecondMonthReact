@@ -126,13 +126,17 @@ export const AddingPage = ({ isBook }) => {
 			validationSchema={validationSchema}
 			onReset={(values) => console.log(values)}>
 			{(formik) => {
-				console.dir(formik);
+				console.log(formik);
 
 				return (
 					<Form className="w-full h-full">
 						<div className="grid grid-cols-2 w-full h-full">
 							<div className="grow bg-[#F3F3F3ED] dark:bg-[#1B1B1B] flex flex-col items-center justify-center">
-								<DragAndDrop setFieldValue={formik.setFieldValue} />
+								<DragAndDrop
+									setFieldError={formik.setFieldError}
+									setFieldTouched={formik.setFieldTouched}
+									setFieldValue={formik.setFieldValue}
+								/>
 							</div>
 							<div className="grow mx-auto max-w-[330px] w-full flex flex-col justify-center">
 								<h1 className="font-bold dark:text-white text-left text-[32px] leading-[48px] mb-3">
@@ -264,7 +268,7 @@ export const AddingPage = ({ isBook }) => {
 
 								<button
 									className="bg-[#152540] py-3.5 text-white font-medium text-lg rounded-full dark:bg-white dark:text-black"
-									disabled={formik.dirty && formik.isValid ? false : true}
+									disabled={formik.dirty && formik.isValid && formik.values.image ? false : true}
 									type="submit"
 									{...formik.getFieldProps("bio")}>
 									{t("adding_page.submitBtn")}
