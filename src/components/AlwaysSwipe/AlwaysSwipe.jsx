@@ -28,7 +28,7 @@ export const AlwaysSwipe = ({ isBook }) => {
 			  instance(`/book/genreId/${genre}`).then((res) => {
 					res.status === 201 && setCarousel(res.data);
 			  });
-	}, []);
+	}, [param]);
 
 	return (
 		<Swiper
@@ -41,14 +41,12 @@ export const AlwaysSwipe = ({ isBook }) => {
 			slidesPerView={7}
 			modules={[Autoplay]}
 			className="mySwiper max-w-[1700px] mx-auto">
-			{carousel &&
+			{carousel.length !== 0 ? (
 				carousel.map((item) => (
 					<SwiperSlide
 						key={item.id}
 						className="flex flex-col !items-start cursor-pointer bg-white dark:!bg-[#191919]"
-						onClick={() =>
-							isBook ? navigate("/author/" + item.id) : navigate(`/book/${item.id}`)
-						}>
+						onClick={() => (isBook ? navigate("/book/" + item.id) : navigate(`/book/${item.id}`))}>
 						<img
 							className="mb-3 rounded-[15px] w-[190px] h-[283px] object-fill"
 							src={`http://localhost:5000/${item.image}`}
@@ -60,7 +58,12 @@ export const AlwaysSwipe = ({ isBook }) => {
 						</h3>
 						<p className="text-[#0D0D0D99] dark:text-[#FFFFFF99]">{authorName}</p>
 					</SwiperSlide>
-				))}
+				))
+			) : (
+				<div className="h-[180px] flex justify-center items-center">
+					<h2 className="text-center dark:text-white text-2xl">No books or authors</h2>
+				</div>
+			)}
 		</Swiper>
 	);
 };

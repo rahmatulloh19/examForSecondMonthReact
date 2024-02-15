@@ -2,6 +2,7 @@ import { t } from "i18next";
 import instance from "../../axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Loading } from "../Loading";
 
 export const Categories = ({ isBooks }) => {
 	const navigate = useNavigate();
@@ -91,8 +92,8 @@ export const Categories = ({ isBooks }) => {
 				</ul>
 
 				{!isBooks ? (
-					<ul className="grid grid-cols-4 gap-x-5 gap-y-6">
-						{authors[0] &&
+					<ul className="grid grid-cols-4 gap-x-5 gap-y-6 relative min-h-[500px]">
+						{authors[0] ? (
 							authors.map((item) => (
 								<li
 									className="cursor-pointer rounded-[22px] bg-[#F5F5F5] dark:bg-[#1E1E1E]"
@@ -117,11 +118,14 @@ export const Categories = ({ isBooks }) => {
 										</div>
 									</div>
 								</li>
-							))}
+							))
+						) : (
+							<Loading className="absolute w-full top-40" />
+						)}
 					</ul>
 				) : (
-					<ul className="grid grid-cols-6 gap-x-5 gap-y-6">
-						{books[0] &&
+					<ul className="grid grid-cols-6 gap-x-5 gap-y-6 relative min-h-[500px]">
+						{books[0] ? (
 							books.map((item, index) => {
 								return (
 									<li
@@ -143,7 +147,10 @@ export const Categories = ({ isBooks }) => {
 										</span>
 									</li>
 								);
-							})}
+							})
+						) : (
+							<Loading className="absolute w-full top-40" />
+						)}
 					</ul>
 				)}
 			</div>

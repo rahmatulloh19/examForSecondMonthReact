@@ -9,7 +9,7 @@ export const Search = ({ name }) => {
 	const handleSearch = (evt) => {
 		evt.preventDefault();
 
-		instance.get("/book/search", { name: evt.target[0].value }).then((res) => {
+		instance.get(`/${name}/search?${name}=${evt.target[0].value}`).then((res) => {
 			setSearchValue(res.data);
 		});
 	};

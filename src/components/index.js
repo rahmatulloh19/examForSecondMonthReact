@@ -10,6 +10,8 @@ import { Info } from "./Info";
 import { AlwaysSwipe } from "./AlwaysSwipe";
 import { UserNavbar } from "./UserNavbar";
 import { DragAndDrop } from "./DragAndDrop";
+import { Loading } from "./Loading";
+import { SearchRenderList } from "./SearchRenderList";
 
 export {
 	NotFound,
@@ -24,4 +26,6 @@ export {
 	AlwaysSwipe,
 	UserNavbar,
 	DragAndDrop,
+	Loading,
+	SearchRenderList,
 };

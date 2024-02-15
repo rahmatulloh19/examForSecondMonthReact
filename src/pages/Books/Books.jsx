@@ -1,4 +1,4 @@
-import { Carousel, Categories, Header, Search } from "../../components";
+import { Carousel, Categories, Header, Search, SearchRenderList } from "../../components";
 
 export const Books = () => {
 	return (
@@ -8,6 +8,7 @@ export const Books = () => {
 				<Carousel />
 				<Search name="book" />
 				<Categories isBooks={true} />
+				<SearchRenderList isBooks={true} />
 			</main>
 		</>
 	);

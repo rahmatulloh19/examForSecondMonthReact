@@ -1,14 +1,10 @@
-import { useParams } from "react-router-dom";
 import { AlwaysSwipe, Header, Info } from "../../components";
 
 export const SinglePage = ({ isBook }) => {
-	const param = useParams();
-	console.log(param);
-
 	return (
 		<>
 			<Header />
-			<main className="dark:bg-[#191919] pb-[120px]">
+			<main>
 				<Info isBook={isBook} />
 
 				<AlwaysSwipe isBook={isBook} />
