@@ -3,7 +3,7 @@ import instance from "../../axios";
 import { useContext } from "react";
 import { SearchValue } from "../../Contexts";
 
-export const Search = ({ name }) => {
+export const Search = ({ name, setHandleClick }) => {
 	const { setSearchValue } = useContext(SearchValue);
 
 	const handleSearch = (evt) => {
@@ -11,7 +11,9 @@ export const Search = ({ name }) => {
 
 		instance.get(`/${name}/search?${name}=${evt.target[0].value}`).then((res) => {
 			setSearchValue(res.data);
+			setHandleClick(true);
 		});
+		console.log("hello");
 	};
 
 	return (

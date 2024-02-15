@@ -2,14 +2,14 @@ import { useContext } from "react";
 import { SearchValue } from "../../Contexts";
 import { useNavigate } from "react-router-dom";
 
-export const SearchRenderList = ({ isBooks }) => {
+export const SearchRenderList = ({ isBooks, handleClick, setHandleClick, searchListRef }) => {
 	const navigate = useNavigate();
 	const { searchValue } = useContext(SearchValue);
 
-	console.log(searchValue);
-
-	return searchValue[0] ? (
-		<div className="absolute top-[402px] left-1/2 -translate-x-1/2 dark:bg-[#2d2d2d] text-white p-3 py-4 rounded-2xl w-2/4 z-10">
+	return searchValue[0] && handleClick ? (
+		<div
+			className="absolute top-[402px] left-1/2 -translate-x-1/2 dark:bg-[#2d2d2d] text-white p-3 py-4 rounded-2xl w-2/4 z-10"
+			ref={searchListRef}>
 			<ul className="max-h-[150px] overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#0000005a]">
 				{isBooks
 					? searchValue.map((item) => {
