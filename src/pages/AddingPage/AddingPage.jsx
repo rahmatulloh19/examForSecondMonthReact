@@ -109,12 +109,10 @@ export const AddingPage = ({ isBook }) => {
 
 		if (isBook) {
 			instance.postForm("/book", formData).then((res) => {
-				console.log(res);
 				actions.resetForm();
 			});
 		} else {
 			instance.postForm("/author", formData).then((res) => {
-				console.log(res);
 				actions.resetForm();
 			});
 		}
@@ -126,8 +124,6 @@ export const AddingPage = ({ isBook }) => {
 			validationSchema={validationSchema}
 			onReset={(values) => console.log(values)}>
 			{(formik) => {
-				console.log(formik);
-
 				return (
 					<Form className="w-full h-full">
 						<div className="grid grid-cols-2 w-full h-full">

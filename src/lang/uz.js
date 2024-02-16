@@ -32,7 +32,7 @@ export const uz = {
 	header: {
 		main: "Bosh sahifa",
 		books: "Kitoblar",
-		Profil: "Profil",
+		profile: "Profil",
 		addAuthor: "Muallif qo'shish",
 		addBook: "Kitob qo'shish",
 		logout: "Chiqish",

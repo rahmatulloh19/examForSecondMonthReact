@@ -16,7 +16,6 @@ export const Info = ({ isBook }) => {
 			  })
 			: instance(`/author/authorId/${param.id}`).then((res) => {
 					res.status === 201 && setRenderingData(res.data);
-					console.log(res);
 			  });
 	}, [param]);
 

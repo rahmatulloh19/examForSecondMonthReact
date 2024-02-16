@@ -28,9 +28,7 @@ export const Security = () => {
 	});
 
 	const handleSubmit = (values) => {
-		instance.put("user/security", values).then((res) => {
-			console.log(res);
-		});
+		instance.put("user/security", values).then((res) => {});
 	};
 
 	return (

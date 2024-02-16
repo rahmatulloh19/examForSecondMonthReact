@@ -120,7 +120,6 @@ export const Profile = () => {
 										required
 										onBlur={formik.handleBlur("")}
 										onChange={(evt) => {
-											console.log(formik.getFieldProps("image"));
 											formik.setFieldValue("image", evt.target.files[0]);
 										}}
 									/>

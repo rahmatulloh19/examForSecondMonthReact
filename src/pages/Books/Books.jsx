@@ -1,9 +1,12 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Carousel, Categories, Header, Search, SearchRenderList } from "../../components";
+import { useParams } from "react-router-dom";
 
 export const Books = () => {
 	const [handleClick, setHandleClick] = useState(true);
 	const searchListRef = useRef(null);
+
+	const param = useParams();
 
 	const closeOpenMenu = (evt) => {
 		if (handleClick && !searchListRef.current?.contains(evt.target)) {
@@ -12,6 +15,10 @@ export const Books = () => {
 	};
 
 	window.addEventListener("mousedown", closeOpenMenu);
+
+	useEffect(() => {
+		setHandleClick(false);
+	}, [param]);
 
 	return (
 		<>

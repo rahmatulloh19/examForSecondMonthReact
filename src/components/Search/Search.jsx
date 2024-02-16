@@ -13,7 +13,6 @@ export const Search = ({ name, setHandleClick }) => {
 			setSearchValue(res.data);
 			setHandleClick(true);
 		});
-		console.log("hello");
 	};
 
 	return (
