@@ -1,5 +1,5 @@
 import { t } from "i18next";
-import instance from "../../axios";
+import instance, { BASE_URL } from "../../axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loading } from "../Loading";
@@ -22,7 +22,6 @@ export const Categories = ({ isBooks }) => {
     });
     instance(`/book/genreId/${categoryId}`)
       .then((res) => {
-        console.log(res);
         res.status === 201 && setBooks(res.data);
         return res.data.reduce((acc, item) => {
           acc.push(item.author_id);
