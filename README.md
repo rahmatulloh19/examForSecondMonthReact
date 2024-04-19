@@ -24,7 +24,7 @@ To install and run Badiiyat locally, follow these steps:
 
 1. **Clone the Repository**: Clone this repository to your local machine.
 2. **Install Dependencies**: Navigate to the project directory and run `npm install` to install dependencies.
-3. **Start the Development Server**: Run `npm start` to start the development server and access Badiiyat in your web browser.
+3. **Start the Development Server**: Run `npm run dev` to start the development server and access Badiiyat in your web browser.
 
 ## Usage 🚀
 
